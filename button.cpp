@@ -34,6 +34,7 @@ bool button::ispressed(int xx, int yy)
 void button::txt(String letters)
 {
     //add the code for erasing the previous text by drawing a black rectangle
+    
     text = letters;
 }
 
