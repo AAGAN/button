@@ -33,6 +33,7 @@ class button
     void pressed();
     bool state();
     void state(bool);
+    String txt();
     void txt(Adafruit_ILI9341 &tft, String, uint16_t);
     bool ispressed(int, int);
 

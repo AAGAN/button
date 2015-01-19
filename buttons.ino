@@ -6,7 +6,7 @@
 #include <Wire\Wire.h>
 #include <SPI\SPI.h>
 
-button buttons[10];
+button buttons[64];
 
 // For the Adafruit shield, these are the default.
 #define TFT_DC 9
@@ -40,12 +40,16 @@ void loop()
     }
     Serial.println(buttons[0].state());
 
-    buttons[0].txt( tft, "0", ILI9341_DARKGREEN);
-    buttons[1].txt( tft, "1", ILI9341_DARKGREEN);
-    buttons[2].txt( tft, "2", ILI9341_DARKGREEN);
-    buttons[3].txt(tft, "3", ILI9341_DARKGREEN);
-    buttons[4].txt(tft, "4", ILI9341_DARKGREEN);
-    buttons[5].txt(tft, "5", ILI9341_DARKGREEN);
+    for (uint16_t i = 0; i < 64; i++)
+    {
+        String Text = "b" + char(i+1);
+        buttons[i].txt(tft ,Text ,ILI9341_DARKGREEN);
+    }
 
-    delay(500);
+    for (uint8_t i; i<64; i++ )
+    {
+        Serial.print(buttons[i].txt());
+    }
+
+    delay(500); 
 }

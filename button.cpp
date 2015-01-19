@@ -35,6 +35,11 @@ bool button::ispressed(int xx, int yy)
     return false;
 }
 
+String button::txt()
+{
+    return text;
+}
+
 void button::txt(Adafruit_ILI9341 &tft, String letters, uint16_t bcolor)
 {
     //add the code for erasing the previous text by drawing a black rectangle
