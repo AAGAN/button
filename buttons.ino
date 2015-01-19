@@ -40,7 +40,12 @@ void loop()
     }
     Serial.println(buttons[0].state());
 
-    buttons[0].txt( tft , "newText");
+    buttons[0].txt( tft, "0", ILI9341_DARKGREEN);
+    buttons[1].txt( tft, "1", ILI9341_DARKGREEN);
+    buttons[2].txt( tft, "2", ILI9341_DARKGREEN);
+    buttons[3].txt(tft, "3", ILI9341_DARKGREEN);
+    buttons[4].txt(tft, "4", ILI9341_DARKGREEN);
+    buttons[5].txt(tft, "5", ILI9341_DARKGREEN);
 
     delay(500);
 }

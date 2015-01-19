@@ -1,4 +1,3 @@
-// button.h
 #include <Stream.h>
 #include <Adafruit_ILI9341\Adafruit_ILI9341.h>
 #include <Adafruit_FT6206_Library\Adafruit_FT6206.h>
@@ -34,7 +33,7 @@ class button
     void pressed();
     bool state();
     void state(bool);
-    void txt(Adafruit_ILI9341 &tft, String);
+    void txt(Adafruit_ILI9341 &tft, String, uint16_t);
     bool ispressed(int, int);
 
 };
