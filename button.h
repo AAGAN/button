@@ -16,7 +16,7 @@
 	#include "WProgram.h"
 #endif
 
-class button  //: public Adafruit_ILI9341
+class button 
 {
  private:
      bool states;
