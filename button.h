@@ -16,9 +16,9 @@
 	#include "WProgram.h"
 #endif
 
-class button
+class button  //: public Adafruit_ILI9341
 {
- protected:
+ private:
      bool states;
      int x;
      int y;
@@ -30,15 +30,14 @@ class button
  public:
 	button();
     button(int,int,int,int,int,String,bool);
+    ~button();
     void pressed();
     bool state();
     void state(bool);
-    void txt(String);
+    void txt(Adafruit_ILI9341 &tft, String);
     bool ispressed(int, int);
 
 };
-
-//extern ButtonClass Button;
 
 #endif
 

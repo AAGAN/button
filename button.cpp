@@ -22,6 +22,8 @@ button::button(int bx,int by,int bwidth,int bheight, int bcolor, String btext, b
     text = btext;
 }
 
+button::~button(){}
+
 bool button::ispressed(int xx, int yy)
 {
     if (x<xx && (x + width)>xx)
@@ -31,10 +33,10 @@ bool button::ispressed(int xx, int yy)
     return false;
 }
 
-void button::txt(String letters)
+void button::txt(Adafruit_ILI9341 &tft, String letters)
 {
     //add the code for erasing the previous text by drawing a black rectangle
-    
+    tft.fillRect(x+1, y+1, width-2, height-2, 0x0000);
     text = letters;
 }
 

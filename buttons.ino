@@ -8,6 +8,13 @@
 
 button buttons[10];
 
+// For the Adafruit shield, these are the default.
+#define TFT_DC 9
+#define TFT_CS 10
+
+// Use hardware SPI (on Uno, #13, #12, #11) and the above for CS/DC
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
+
 void setup()
 {
     pinMode(13, OUTPUT);
@@ -15,6 +22,7 @@ void setup()
     digitalWrite(13, LOW);
 
     Serial.begin(9600);
+    tft.begin();
 }
 
 void loop()
@@ -31,5 +39,8 @@ void loop()
         digitalWrite(13, LOW);
     }
     Serial.println(buttons[0].state());
+
+    buttons[0].txt( tft , "newText");
+
     delay(500);
 }
